@@ -1,0 +1,35 @@
+/* Hallmark tokens · theme: custom (vibe: "lacquer red, rice paper, quiet study hall")
+ * axes: light paper / classical-serif / warm accent
+ * anchors: Wuji Xuan red #BD1D21, gold #EDA722 */
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/newsreader-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/inter-latin-600-normal.woff2) format("woff2")}
+:root{
+  --color-paper: oklch(97.4% 0.012 80);
+  --color-paper-2: oklch(94.6% 0.018 78);
+  --color-card: oklch(99.2% 0.005 80);
+  --color-ink: oklch(23% 0.012 45);
+  --color-ink-2: oklch(42% 0.012 45);
+  --color-rule: oklch(86% 0.02 70);
+  --color-accent: oklch(50.5% 0.19 27);
+  --color-accent-deep: oklch(41% 0.16 27);
+  --color-on-accent: oklch(98% 0.01 80);
+  --color-gold: oklch(77% 0.15 75);
+  --color-focus: oklch(50.5% 0.19 27);
+
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-cjk: "Noto Serif TC", "Songti TC", "PMingLiU", "MingLiU", serif;
+
+  --text-sm: 0.875rem; --text-base: 1.0625rem; --text-lg: 1.25rem;
+  --text-xl: 1.6rem; --text-2xl: 2.1rem; --text-display: clamp(2.4rem, 6vw, 4.2rem);
+
+  --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px;
+  --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px;
+
+  --radius-sm: 4px; --radius-md: 8px;
+  --rule-hair: 1px solid var(--color-rule);
+  --ease-out: cubic-bezier(.2,.7,.2,1); --ease-in: cubic-bezier(.5,0,.75,0); --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --dur-fast: 120ms; --dur-med: 200ms;
+  --measure: 66ch;
+}

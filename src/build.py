@@ -18,8 +18,8 @@ SITE = {
     "sameAs": [],            # OPEN ITEM: Google listing URL, Instagram, Facebook, Eventbrite organiser page
 }
 
-NAV = [("index.html","Home"),("neigong-class.html","Saturday class"),("private-qigong-lessons.html","Private lessons"),
-       ("online-qigong-class.html","Online"),("qigong-class-cost.html","Cost"),("what-is-neigong.html","What is neigong")]
+NAV = [("neigong-class.html","Saturday class"),("private-qigong-lessons.html","Private lessons"),("online-qigong-class.html","Online"),
+       ("qigong-forms.html","Forms"),("qigong-class-cost.html","Cost"),("what-is-neigong.html","What is neigong")]
 
 def addr_line():
     p = f" {SITE['postal']}" if SITE["postal"] else ""
@@ -51,7 +51,6 @@ def faq_html(faqs):
 
 def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema=None, cta_h='Book a trial class', cta_p=None):
     cta_p = cta_p or f"Text or call {SITE['phone']} to book the $20 trial."
-    second_btn = '' if slug=='qigong-class-cost.html' else '<a class="btn ghost" href="/qigong-class-cost.html">See prices</a>'
     url = SITE["domain"] + "/" + ("" if slug=="index.html" else slug)
     graph = [business_schema()]
     if slug not in ("index.html","404.html"):
@@ -60,12 +59,14 @@ def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema
             {"@type":"ListItem","position":2,"name":h1,"item":url}]})
     if faqs: graph.append(faq_schema(faqs))
     if extra_schema: graph.extend(extra_schema)
-    ld = json.dumps({"@context":"https://schema.org","@graph":graph}, ensure_ascii=False, indent=1)
+    ld = json.dumps({"@context":"https://schema.org","@graph":graph}, ensure_ascii=False, separators=(",",":"))
     cur = ' aria-current="page"'
-    navhtml = "".join('<a href="/' + ("" if h=="index.html" else h) + '"' + (cur if h==slug else "") + '>' + t + '</a>' for h,t in NAV)
-    robots = '<meta name="robots" content="noindex">' if SITE["noindex"] else ''
-    crumb = f'<div class="crumbs"><a href="/">Toronto Qigong</a> / {h1}</div>' if (crumbs and slug!="index.html") else ""
+    navhtml = "".join('<a href="/' + h + '"' + (cur if h==slug else "") + '>' + t + '</a>' for h,t in NAV)
+    robots = '<meta name="robots" content="noindex">' if (SITE["noindex"] or slug=="404.html") else ''
+    canon = '' if slug=='404.html' else f'<link rel="canonical" href="{url}">'
+    crumb = f'<p class="crumbs"><a href="/">Toronto Qigong</a> / {h1}</p>' if (crumbs and slug not in ("index.html","404.html")) else ""
     faqblock = f'<h2>Questions people ask</h2>\n{faq_html(faqs)}' if faqs else ""
+    tel = SITE['phone_e164']; ph = SITE['phone']
     return f"""<!doctype html>
 <html lang="en-CA">
 <head>
@@ -73,45 +74,61 @@ def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-{'' if slug=='404.html' else f'<link rel="canonical" href="{url}">'}
+{canon}
 {robots}
+<meta name="theme-color" content="#BD1D21">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/newsreader-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="/assets/site.css">
-<script type="application/ld+json">
-{ld}
-</script>
+<meta property="og:image" content="{SITE['domain']}/assets/og.png">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{ld}</script>
 </head>
 <body>
-<header class="site"><div class="wrap">
-<a class="brand" href="/">Toronto Qigong<span>Neigong at 255 Broadview</span></a>
-<nav class="main" aria-label="Main">{navhtml}</nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead"><div class="in">
+<a class="wordmark" href="/">Toronto Qigong<span class="zh" lang="zh-Hant">內功</span></a>
+<nav aria-label="Main">{navhtml}</nav>
 </div></header>
-<section class="hero"><div class="wrap">
-{crumb.replace('class="crumbs"','class="crumbs" style="color:#fdf2e3"').replace('<a href="/">','<a style="color:#FFEE72" href="/">')}
+<main id="main" class="page">
+<div class="lead">
+{crumb}
 <h1>{h1}</h1>
 <p class="lede">{lede}</p>
-<a class="btn" href="sms:{SITE['phone_e164']}">Text {SITE['phone']} to book</a>
-{second_btn}
-</div></section>
-<main><div class="wrap">
+</div>
+<article>
 {body}
 {faqblock}
-<div class="cta">
-<h2>{cta_h}</h2>
-<p>{cta_p}</p>
-<a class="btn" href="sms:{SITE['phone_e164']}">Text to book</a>
-<a class="btn ghost" href="tel:{SITE['phone_e164']}">Call {SITE['phone']}</a>
-</div>
-</div></main>
-<footer class="site"><div class="wrap">
-<p><strong>{SITE['name']}</strong><br>{addr_line()}<br>
-<a href="tel:{SITE['phone_e164']}">{SITE['phone']}</a> &middot; <a href="mailto:{SITE['email']}">{SITE['email']}</a><br>
-Saturday class 10 to 11 am. Private lessons Tuesday to Sunday by appointment. Closed Mondays.</p>
-<p>Toronto Qigong is the qigong and neigong school of {SITE['operator']}.</p>
-</div></footer>
+</article>
+<aside class="card" aria-label="Class details">
+<h2>Saturday neigong class</h2>
+<dl>
+<dt>When</dt><dd>Saturdays, 10 to 11 am</dd>
+<dt>Where</dt><dd>255 Broadview Ave, ground floor, or online</dd>
+<dt>Trial</dt><dd>$20 + HST</dd>
+<dt>Monthly</dt><dd>$150 + HST</dd>
+</dl>
+<a class="btn" href="sms:{tel}">Text {ph} to book</a>
+<a class="alt" href="tel:{tel}">or call {ph}</a>
+<p class="note">Private lessons Tuesday to Sunday by appointment. Closed Mondays.</p>
+</aside>
+</main>
+<section class="close" aria-label="Book"><div class="in">
+<div><h2>{cta_h}</h2><p>{cta_p}</p></div>
+<a class="btn" href="sms:{tel}">Text to book</a>
+</div></section>
+<footer>
+<p><b>{SITE['name']}</b><br>{addr_line()}<br>Use the commercial door.</p>
+<p><a href="tel:{tel}">{ph}</a><br><a href="mailto:{SITE['email']}">{SITE['email']}</a></p>
+<p>The qigong and neigong school of {SITE['operator']}.</p>
+</footer>
 </body>
 </html>
 """
@@ -129,7 +146,6 @@ def main():
     nf = page(slug="404.html", title="Page not found | Toronto Qigong", desc="This page does not exist.",
               h1="That page is not here", lede="The link may be old. The class schedule, prices and booking are one click away.",
               body='<p>Try the <a href="/">home page</a>, the <a href="/neigong-class.html">Saturday class</a> or <a href="/qigong-class-cost.html">prices</a>.</p>', crumbs=False)
-    nf = nf.replace('<meta name="robots" content="noindex">','').replace('<head>','<head>\n<meta name="robots" content="noindex">',1)
     open(os.path.join(OUT,"404.html"),"w",encoding="utf-8").write(nf)
     sm = ['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f"<url><loc>{u}</loc><lastmod>{TODAY}</lastmod></url>" for u in urls] + ["</urlset>"]

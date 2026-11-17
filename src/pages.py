@@ -1,9 +1,9 @@
-YIN_SOURCE = """<div class="source">
-<div class="zh">天地，萬物之盜；萬物，人之盜；人，萬物之盜。三盜既宜，三才既安。</div>
-<div class="py">Tiāndì, wànwù zhī dào; wànwù, rén zhī dào; rén, wànwù zhī dào. Sān dào jì yí, sān cái jì ān.</div>
+YIN_SOURCE = """<figure class="source">
+<span class="zh" lang="zh-Hant">天地，萬物之盜；萬物，人之盜；人，萬物之盜。三盜既宜，三才既安。</span>
+<span class="py">Tiāndì, wànwù zhī dào; wànwù, rén zhī dào; rén, wànwù zhī dào. Sān dào jì yí, sān cái jì ān.</span>
 <p>Heaven and earth rob the ten thousand things. The ten thousand things rob people. People rob the ten thousand things. When the three robberies are in proper measure, the three powers are at peace.</p>
-<div class="cite">Huangdi Yinfu Jing 黃帝陰符經 (Yellow Emperor's Scripture of the Hidden Talisman), middle section, received text. English gloss by Toronto Qigong. 盜 dào means to rob or steal.</div>
-</div>"""
+<figcaption class="cite">Huangdi Yinfu Jing 黃帝陰符經 (Yellow Emperor's Scripture of the Hidden Talisman), middle section, received text. English gloss by Toronto Qigong. 盜 dào means to rob or steal.</figcaption>
+</figure>"""
 
 INDEX_FAQ = [
  ("Where is Toronto Qigong?", "255 Broadview Ave, ground floor, Toronto. Use the commercial door. The door beside it is residential."),
@@ -15,12 +15,6 @@ INDEX_FAQ = [
 ]
 
 INDEX_BODY = f"""
-<div class="facts">
-<div class="fact"><b>Group class</b>Saturdays 10 to 11 am</div>
-<div class="fact"><b>Format</b>In person and online, same class</div>
-<div class="fact"><b>Trial</b>$20 + HST</div>
-<div class="fact"><b>Monthly</b>$150 + HST</div>
-</div>
 
 <p>Toronto Qigong is a neigong school on Broadview Avenue in Riverdale. We teach people how to build an internal state through movement and how to return to it. The group meets Saturday mornings, and private lessons run through the rest of the week for people who want closer coaching.</p>
 
@@ -45,6 +39,9 @@ INDEX_BODY = f"""
 <h3><a href="/online-qigong-class.html">Online qigong class</a></h3>
 <p>The Saturday class is streamed live. Online students get the same coaching in real time.</p>
 
+<h2>Forms we practise</h2>
+<p>The school's practice videos cover four classical sets: 八段錦 Eight Pieces of Brocade, 香功 Fragrant Qigong, 易筋經 the Sinew Changing Classic, and the Five Yin Organ Exercise. <a href="/qigong-forms.html">The forms, with videos.</a></p>
+
 <h2>What it costs</h2>
 <p>The trial class is $20 plus HST. After that, the monthly subscription is $150 plus HST. It covers the Saturday class every week, the other group classes on the schedule, and one extra session each month: either a one-hour Reiki session or a 30-minute divination coaching session. Unused sessions do not roll over. <a href="/qigong-class-cost.html">Full pricing.</a></p>
 
@@ -64,12 +61,6 @@ CLASS_FAQ = [
 ]
 
 CLASS_BODY = """
-<div class="facts">
-<div class="fact"><b>When</b>Saturdays, 10 to 11 am</div>
-<div class="fact"><b>Where</b>255 Broadview Ave, ground floor, or online</div>
-<div class="fact"><b>Each class</b>3 to 5 movements, coached</div>
-<div class="fact"><b>First class</b>$20 + HST trial</div>
-</div>
 
 <p>The Saturday class is technically a neigong class. We use qigong forms as the vehicle and spend the hour on what happens inside them. It runs in person at our Broadview Avenue school and live online at the same time, with the same coaching for both rooms.</p>
 
@@ -119,12 +110,6 @@ ONLINE_FAQ = [
 ONLINE_BODY = """
 <p>The Saturday neigong class streams live from our Toronto school every week. Online students join the same class as the people in the room, at the same time.</p>
 
-<div class="facts">
-<div class="fact"><b>When</b>Saturdays 10 to 11 am Eastern</div>
-<div class="fact"><b>Format</b>Live, same class as the room</div>
-<div class="fact"><b>Trial</b>$20 + HST</div>
-<div class="fact"><b>Monthly</b>$150 + HST</div>
-</div>
 
 <h2>Why the class is live</h2>
 <p>Neigong is coached. Joining live lets the teacher see how you are moving, ask what you are noticing, and adjust one thing at a time, which a recorded video cannot do.</p>
@@ -149,18 +134,16 @@ COST_FAQ = [
 COST_BODY = """
 <p>Two prices cover the group program. Both are plus HST.</p>
 
-<div class="price"><div class="amt">$20 <small>+ HST</small></div>
-<h3 style="margin-top:6px">Trial class</h3>
-<p>One Saturday neigong class, in person or online. The way to find out if the method suits you before committing to a month.</p></div>
+<div class="price"><h3>Trial class</h3><div class="amt">$20 <small>+ HST</small></div>
+<div><p>One Saturday neigong class, in person or online. The way to find out if the method suits you before committing to a month.</p></div></div>
 
-<div class="price"><div class="amt">$150 <small>+ HST / month</small></div>
-<h3 style="margin-top:6px">Monthly neigong subscription</h3>
-<ul>
+<div class="price"><h3>Monthly neigong subscription</h3><div class="amt">$150 <small>+ HST / mo</small></div>
+<div><ul>
 <li>The Saturday class every week, in person or online</li>
 <li>The other group classes on the school schedule</li>
 <li>One included session each month: a one-hour Reiki session or a 30-minute divination coaching session</li>
 </ul>
-<p>Unused classes and sessions do not roll over into the next month.</p></div>
+<p>Unused classes and sessions do not roll over into the next month.</p></div></div>
 
 
 <h2>Private lessons</h2>
@@ -188,12 +171,12 @@ NEIGONG_BODY = f"""
 
 <h2>The texts behind the practice</h2>
 <p>We teach from a philosophical place and use the classical sources directly. The Yinfu Jing opens with this line:</p>
-<div class="source">
-<div class="zh">觀天之道，執天之行，盡矣。</div>
-<div class="py">Guān tiān zhī dào, zhí tiān zhī xíng, jìn yǐ.</div>
+<figure class="source">
+<span class="zh" lang="zh-Hant">觀天之道，執天之行，盡矣。</span>
+<span class="py">Guān tiān zhī dào, zhí tiān zhī xíng, jìn yǐ.</span>
 <p>Observe the way of heaven, hold to the movement of heaven, and that is everything.</p>
-<div class="cite">Huangdi Yinfu Jing 黃帝陰符經, opening line, received text. English gloss by Toronto Qigong.</div>
-</div>
+<figcaption class="cite">Huangdi Yinfu Jing 黃帝陰符經, opening line, received text. English gloss by Toronto Qigong.</figcaption>
+</figure>
 <p>In class we apply it by watching what a movement does to you before deciding what it is for.</p>
 <p>The same text is unsentimental about the world. It describes heaven and earth, people and things all taking from one another:</p>
 {YIN_SOURCE}
@@ -203,13 +186,32 @@ NEIGONG_BODY = f"""
 <p>The training is a practice of attention and state. Classes do not diagnose or treat any condition, and neigong is not a substitute for medical care.</p>
 """
 
+FORMS_BODY = '''
+<p>Qigong forms are the vehicle for the neigong training. These are the sets shown in the school's practice videos on Instagram. Each link opens a short follow-along clip filmed at Wuji Xuan in Riverdale.</p>
+
+<ol class="forms">
+<li><span class="zh" lang="zh-Hant">八段錦</span><b>Eight Pieces of Brocade</b> <span class="py">Bāduànjǐn</span><br>A standing set of eight movements, and one of the most widely practised qigong sets. <a href="https://www.instagram.com/reel/DfBEbFAAk6h/">Watch the practice video</a></li>
+<li><span class="zh" lang="zh-Hant">香功</span><b>Fragrant Qigong</b> <span class="py">Xiānggōng</span><br>Done standing, with slow movements of the hands and arms. <a href="https://www.instagram.com/reel/DfGN810DEJc/">Watch the practice video</a></li>
+<li><span class="zh" lang="zh-Hant">易筋經</span><b>Sinew Changing Classic</b> <span class="py">Yìjīnjīng</span><br>A set that takes its name from an old text of the same title. <a href="https://www.instagram.com/reel/DfTM3fIiffF/">Watch the practice video</a></li>
+<li><span class="zh" lang="zh-Hant">五臟</span><b>Five Yin Organ Exercise</b> <span class="py">Wǔ zàng</span><br>Organised around the five yin organs of Chinese medicine: Liver, Heart, Spleen, Lung and Kidney. <a href="https://www.instagram.com/reel/DfYWbEuFH4E/">Watch the practice video</a></li>
+</ol>
+
+<h2>How the forms are used in class</h2>
+<p>A Saturday class takes three to five movements from a form and coaches the energetics of each one. The form gives you the shape. The coaching covers where attention sits, what changes in the breath, and how to map the state that a movement produces across the five senses so you can return to it. <a href="/what-is-neigong.html">How we teach neigong.</a></p>
+
+<h2>Practising at home</h2>
+<p>The videos are short follow-along clips for practice between classes. They are practice videos, not medical advice. For any health concern, talk with your doctor.</p>
+'''
+
+FORMS_FAQ = [('Which form will I learn first?', "Ask when you book. Each class works on three to five movements, and the coaching is given at each person's level."), ('Can I follow the videos without coming to class?', 'Yes. They are free on Instagram at @wuji_xuan. The class adds live coaching on the energetics.'), ('Where are the videos filmed?', 'At Wuji Xuan Life Wellness, 255 Broadview Ave, Riverdale, Toronto.')]
+
 PAGES = [
  dict(slug="index.html",
       cta_h="Try one Saturday", cta_p="The trial is $20 plus HST, at 255 Broadview or online. Text or call 416-595-5525 with your name and whether you will come in person or join online.",
       title="Toronto Qigong | Neigong Classes at 255 Broadview, Riverdale",
       desc="Neigong and qigong classes in Toronto. Saturday 10 to 11 am at 255 Broadview Ave and online. Trial class $20 + HST, monthly $150 + HST.",
       h1="Qigong and neigong classes in Toronto",
-      lede="A Saturday neigong class at 255 Broadview Ave in Riverdale, in person and live online. Three to five movements per class, coached until you can use them.",
+      lede="A Saturday neigong class at 255 Broadview Ave in Riverdale, in person and live online. Three to five movements per class, each one coached.",
       body=INDEX_BODY, faqs=INDEX_FAQ),
  dict(slug="neigong-class.html",
       cta_h="Book this Saturday", cta_p="Text 416-595-5525 with your name and in person or online. Class starts at 10 am.",
@@ -246,4 +248,11 @@ PAGES = [
       h1="What is neigong?",
       lede="內功 nèigōng, internal skill. How it relates to qigong, how we teach it, and the Daoist texts behind the practice.",
       body=NEIGONG_BODY, faqs=NEIGONG_FAQ),
+ dict(slug="qigong-forms.html",
+      cta_h="Learn the forms in person", cta_p="The Saturday class coaches these movements live. Text or call 416-595-5525 to book a $20 trial.",
+      title="Qigong Forms: Baduanjin, Fragrant Qigong, Yijinjing | Toronto Qigong",
+      desc="The qigong forms practised at Toronto Qigong: Eight Pieces of Brocade, Fragrant Qigong, Sinew Changing Classic and the Five Yin Organ Exercise, with practice videos.",
+      h1="Qigong forms we practise",
+      lede="Eight Pieces of Brocade, Fragrant Qigong, the Sinew Changing Classic and the Five Yin Organ Exercise, with follow-along practice videos.",
+      body=FORMS_BODY, faqs=FORMS_FAQ),
 ]
