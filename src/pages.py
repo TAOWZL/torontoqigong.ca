@@ -40,7 +40,7 @@ INDEX_BODY = f"""
 <p>The Saturday class is streamed live. Online students get the same coaching in real time.</p>
 
 <h2>Forms we practise</h2>
-<p>The school's practice videos cover four classical sets: 八段錦 Eight Pieces of Brocade, 香功 Fragrant Qigong, 易筋經 the Sinew Changing Classic, and the Five Yin Organ Exercise. <a href="/qigong-forms.html">The forms, with videos.</a></p>
+<p>Classes draw on four classical sets: 八段錦 Eight Pieces of Brocade, 香功 Fragrant Qigong, 易筋經 the Sinew Changing Classic, and the Five Yin Organ Exercise. <a href="/qigong-forms.html">More on the forms.</a></p>
 
 <h2>What it costs</h2>
 <p>The trial class is $20 plus HST. After that, the monthly subscription is $150 plus HST. It covers the Saturday class every week, the other group classes on the schedule, and one extra session each month: either a one-hour Reiki session or a 30-minute divination coaching session. Unused sessions do not roll over. <a href="/qigong-class-cost.html">Full pricing.</a></p>
@@ -187,23 +187,28 @@ NEIGONG_BODY = f"""
 """
 
 FORMS_BODY = '''
-<p>Qigong forms are the vehicle for the neigong training. These are the sets shown in the school's practice videos on Instagram. Each link opens a short follow-along clip filmed at Wuji Xuan in Riverdale.</p>
+<p>Qigong forms are the vehicle for the neigong training. These are four of the classical sets practised at the school, at 255 Broadview Ave and in the live online class.</p>
 
 <ol class="forms">
-<li><span class="zh" lang="zh-Hant">八段錦</span><b>Eight Pieces of Brocade</b> <span class="py">Bāduànjǐn</span><br>A standing set of eight movements, and one of the most widely practised qigong sets. <a href="https://www.instagram.com/reel/DfBEbFAAk6h/">Watch the practice video</a></li>
-<li><span class="zh" lang="zh-Hant">香功</span><b>Fragrant Qigong</b> <span class="py">Xiānggōng</span><br>Done standing, with slow movements of the hands and arms. <a href="https://www.instagram.com/reel/DfGN810DEJc/">Watch the practice video</a></li>
-<li><span class="zh" lang="zh-Hant">易筋經</span><b>Sinew Changing Classic</b> <span class="py">Yìjīnjīng</span><br>A set that takes its name from an old text of the same title. <a href="https://www.instagram.com/reel/DfTM3fIiffF/">Watch the practice video</a></li>
-<li><span class="zh" lang="zh-Hant">五臟</span><b>Five Yin Organ Exercise</b> <span class="py">Wǔ zàng</span><br>Organised around the five yin organs of Chinese medicine: Liver, Heart, Spleen, Lung and Kidney. <a href="https://www.instagram.com/reel/DfYWbEuFH4E/">Watch the practice video</a></li>
+<li><span class="zh" lang="zh-Hant">八段錦</span><b>Eight Pieces of Brocade</b> <span class="py">Bāduànjǐn</span><br>A standing set of eight movements, and one of the most widely practised qigong sets.</li>
+<li><span class="zh" lang="zh-Hant">香功</span><b>Fragrant Qigong</b> <span class="py">Xiānggōng</span><br>Done standing, with slow movements of the hands and arms.</li>
+<li><span class="zh" lang="zh-Hant">易筋經</span><b>Sinew Changing Classic</b> <span class="py">Yìjīnjīng</span><br>A set that takes its name from an old text of the same title.</li>
+<li><span class="zh" lang="zh-Hant">五臟</span><b>Five Yin Organ Exercise</b> <span class="py">Wǔ zàng</span><br>Organised around the five yin organs of Chinese medicine: Liver, Heart, Spleen, Lung and Kidney.</li>
 </ol>
 
 <h2>How the forms are used in class</h2>
 <p>A Saturday class takes three to five movements from a form and coaches the energetics of each one. The form gives you the shape. The coaching covers where attention sits, what changes in the breath, and how to map the state that a movement produces across the five senses so you can return to it. <a href="/what-is-neigong.html">How we teach neigong.</a></p>
 
-<h2>Practising at home</h2>
-<p>The videos are short follow-along clips for practice between classes. They are practice videos, not medical advice. For any health concern, talk with your doctor.</p>
+<h2>Why the forms are taught live</h2>
+<p>The shape of a movement can be copied from anywhere. The energetics come from coaching: what the attention does, what the breath does, and which state the movement anchors. Every form here is taught in class, in person or live online, with the teacher watching and adjusting.</p>
+<p>Classes are a practice of attention and state and are not medical advice. For any health concern, talk with your doctor.</p>
 '''
 
-FORMS_FAQ = [('Which form will I learn first?', "Ask when you book. Each class works on three to five movements, and the coaching is given at each person's level."), ('Can I follow the videos without coming to class?', 'Yes. They are free on Instagram at @wuji_xuan. The class adds live coaching on the energetics.'), ('Where are the videos filmed?', 'At Wuji Xuan Life Wellness, 255 Broadview Ave, Riverdale, Toronto.')]
+FORMS_FAQ = [
+ ("Which form will I learn first?", "Ask when you book. Each class works on three to five movements, and the coaching is given at each person's level."),
+ ("Can I learn the forms online?", "Yes. The Saturday class runs live online at the same time as the room, and private lessons are available online too."),
+ ("Where are classes held?", "At 255 Broadview Ave, ground floor, in Riverdale, Toronto, and live online."),
+]
 
 PAGES = [
  dict(slug="index.html",
@@ -251,8 +256,8 @@ PAGES = [
  dict(slug="qigong-forms.html",
       cta_h="Learn the forms in person", cta_p="The Saturday class coaches these movements live. Text or call 416-595-5525 to book a $20 trial.",
       title="Qigong Forms: Baduanjin, Fragrant Qigong, Yijinjing | Toronto Qigong",
-      desc="The qigong forms practised at Toronto Qigong: Eight Pieces of Brocade, Fragrant Qigong, Sinew Changing Classic and the Five Yin Organ Exercise, with practice videos.",
+      desc="The qigong forms taught at Toronto Qigong: Eight Pieces of Brocade, Fragrant Qigong, Sinew Changing Classic and the Five Yin Organ Exercise, live in Toronto and online.",
       h1="Qigong forms we practise",
-      lede="Eight Pieces of Brocade, Fragrant Qigong, the Sinew Changing Classic and the Five Yin Organ Exercise, with follow-along practice videos.",
+      lede="Eight Pieces of Brocade, Fragrant Qigong, the Sinew Changing Classic and the Five Yin Organ Exercise, coached live in Toronto and online.",
       body=FORMS_BODY, faqs=FORMS_FAQ),
 ]

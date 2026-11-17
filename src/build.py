@@ -43,6 +43,15 @@ def business_schema():
     if SITE["sameAs"]: s["sameAs"] = SITE["sameAs"]
     return s
 
+
+def course_schema():
+    sched={"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Saturday","startTime":"10:00","endTime":"11:00","duration":"PT1H","scheduleTimezone":"America/Toronto"}
+    return {"@type":"Course","@id":SITE["domain"]+"/#saturday-class","name":"Saturday Neigong Class","description":"A one-hour neigong class taught through qigong forms. Three to five movements per class, with coaching on the energetics of each.","provider":{"@id":SITE["domain"]+"/#school"},
+            "offers":[{"@type":"Offer","category":"Trial","price":"20.00","priceCurrency":"CAD"},{"@type":"Offer","category":"Subscription","price":"150.00","priceCurrency":"CAD"}],
+            "hasCourseInstance":[
+              {"@type":"CourseInstance","courseMode":"onsite","courseSchedule":sched,"location":{"@type":"Place","name":"Toronto Qigong","address":{"@type":"PostalAddress","streetAddress":SITE["street"],"addressLocality":SITE["city"],"addressRegion":SITE["region"],"addressCountry":SITE["country"]}}},
+              {"@type":"CourseInstance","courseMode":"online","courseSchedule":sched,"location":{"@type":"VirtualLocation","url":SITE["domain"]+"/online-qigong-class.html"}}]}
+
 def faq_schema(faqs):
     return {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]}
 
@@ -57,6 +66,7 @@ def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema
         graph.append({"@type":"BreadcrumbList","itemListElement":[
             {"@type":"ListItem","position":1,"name":"Toronto Qigong","item":SITE["domain"]+"/"},
             {"@type":"ListItem","position":2,"name":h1,"item":url}]})
+    if slug in ('index.html','neigong-class.html','online-qigong-class.html'): graph.append(course_schema())
     if faqs: graph.append(faq_schema(faqs))
     if extra_schema: graph.extend(extra_schema)
     ld = json.dumps({"@context":"https://schema.org","@graph":graph}, ensure_ascii=False, separators=(",",":"))
@@ -119,6 +129,8 @@ def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema
 <a class="btn" href="sms:{tel}">Text {ph} to book</a>
 <a class="alt" href="tel:{tel}">or call {ph}</a>
 <p class="note">Private lessons Tuesday to Sunday by appointment. Closed Mondays.</p>
+<p class="note" id="localtime" hidden></p>
+<script src="/assets/localtime.js" defer></script>
 </aside>
 </main>
 <section class="close" aria-label="Book"><div class="in">
