@@ -11,7 +11,7 @@ SITE = {
     "operator": "Wuji Xuan Life Wellness Ltd",
     "street": "255 Broadview Ave, Ground Floor",
     "city": "Toronto", "region": "ON", "country": "CA",
-    "postal": "",            # OPEN ITEM: paste postal code exactly as on the Google listing
+    "postal": "M4M 2G6",
     "phone": "416-595-5525", "phone_e164": "+14165955525",
     "email": "admin@wujixuan.org",
     "trial_url": "https://buy.stripe.com/8x228qePkgwX3b0cWZ3Nm0E", "monthly_url": "https://buy.stripe.com/7sY7sK0YueoP9zo1eh3Nm0F",  # OPEN ITEM: swap for an @torontoqigong.ca address if one is set up
