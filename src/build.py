@@ -141,7 +141,7 @@ def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema
 <footer>
 <p><b>{SITE['name']}</b><br>{addr_line()}<br>Use the commercial door.</p>
 <p><a href="tel:{tel}">{ph}</a><br><a href="mailto:{SITE['email']}">{SITE['email']}</a></p>
-<p>The qigong and neigong school of {SITE['operator']}.</p>
+<p>The qigong and neigong school of {SITE['operator']}.<br><a href="https://billing.stripe.com/p/login/eVqbJ0ePkfsTfXMaOR3Nm00">Manage your subscription</a></p>
 </footer>
 </body>
 </html>

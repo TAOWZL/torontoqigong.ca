@@ -126,6 +126,7 @@ ONLINE_BODY = """
 
 COST_FAQ = [
  ("Is HST included?", "No. All prices are plus HST."),
+ ("How do I cancel or update my card?", "Use the <a href=\"https://billing.stripe.com/p/login/eVqbJ0ePkfsTfXMaOR3Nm00\">subscription portal</a> with the email you paid with. Cancelling stops the next charge, and your classes run to the end of the month you paid for."),
  ("Do unused sessions roll over?", "No. The Saturday classes and the included monthly session are for that month."),
  ("How do I pay?", "By card online, or by e-transfer or in person at 255 Broadview Ave."),
  ("What is divination coaching?", "A 30-minute one-to-one session using tarot or mahjong. Subscribers can choose it instead of the Reiki session each month."),
