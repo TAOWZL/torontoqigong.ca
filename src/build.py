@@ -31,10 +31,10 @@ def business_schema():
     if SITE["postal"]: a["postalCode"] = SITE["postal"]
     s = {"@type":["LocalBusiness","EducationalOrganization"],"@id":SITE["domain"]+"/#school",
          "name":SITE["name"],"url":SITE["domain"]+"/","telephone":SITE["phone_e164"],"email":SITE["email"],
-         "address":a,"areaServed":["Toronto","Riverdale","Leslieville","East York","Online"],
+         "address":a,"areaServed":["Toronto","Riverdale","Leslieville","East York","Canada"],"availableChannel":{"@type":"ServiceChannel","name":"Live online classes","serviceUrl":"https://torontoqigong.ca/online-qigong-class.html"},
          "parentOrganization":{"@type":"Organization","name":SITE["operator"]},
          "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"11:00"}],
-         "description":"Neigong and qigong classes in Toronto at 255 Broadview Ave. Saturday group class in person and online, private lessons through the week.",
+         "description":"Neigong and qigong classes in Toronto at 255 Broadview Ave and live online. Saturday group class in person and online, private lessons in person or online through the week.",
          "makesOffer":[
            {"@type":"Offer","name":"Trial class","price":"20.00","priceCurrency":"CAD","description":"One Saturday neigong class. Plus HST."},
            {"@type":"Offer","name":"Monthly neigong subscription","price":"150.00","priceCurrency":"CAD",
@@ -111,7 +111,8 @@ def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema
 <h2>Saturday neigong class</h2>
 <dl>
 <dt>When</dt><dd>Saturdays, 10 to 11 am</dd>
-<dt>Where</dt><dd>255 Broadview Ave, ground floor, or online</dd>
+<dt>Where</dt><dd>255 Broadview Ave, ground floor</dd>
+<dt>Online</dt><dd>Live, from anywhere</dd>
 <dt>Trial</dt><dd>$20 + HST</dd>
 <dt>Monthly</dt><dd>$150 + HST</dd>
 </dl>
