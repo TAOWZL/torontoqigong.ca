@@ -13,7 +13,8 @@ SITE = {
     "city": "Toronto", "region": "ON", "country": "CA",
     "postal": "",            # OPEN ITEM: paste postal code exactly as on the Google listing
     "phone": "416-595-5525", "phone_e164": "+14165955525",
-    "email": "admin@wujixuan.org",  # OPEN ITEM: swap for an @torontoqigong.ca address if one is set up
+    "email": "admin@wujixuan.org",
+    "trial_url": "https://buy.stripe.com/8x228qePkgwX3b0cWZ3Nm0E", "monthly_url": "https://buy.stripe.com/7sY7sK0YueoP9zo1eh3Nm0F",  # OPEN ITEM: swap for an @torontoqigong.ca address if one is set up
     "noindex": False,         # flip to False at launch
     "sameAs": [],            # OPEN ITEM: Google listing URL, Instagram, Facebook, Eventbrite organiser page
 }
@@ -59,7 +60,7 @@ def faq_html(faqs):
     return "\n".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q,a in faqs)
 
 def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema=None, cta_h='Book a trial class', cta_p=None):
-    cta_p = cta_p or f"Text or call {SITE['phone']} to book the $20 trial."
+    cta_p = cta_p or "Pay online by card and you are booked. Questions first? Text " + SITE['phone'] + "."
     url = SITE["domain"] + "/" + ("" if slug=="index.html" else slug)
     graph = [business_schema()]
     if slug not in ("index.html","404.html"):
@@ -126,8 +127,8 @@ def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema
 <dt>Trial</dt><dd>$20 + HST</dd>
 <dt>Monthly</dt><dd>$150 + HST</dd>
 </dl>
-<a class="btn" href="sms:{tel}">Text {ph} to book</a>
-<a class="alt" href="tel:{tel}">or call {ph}</a>
+<a class="btn" href="{SITE['trial_url']}">Book the $20 trial</a>
+<a class="alt" href="sms:{tel}">or text {ph}</a>
 <p class="note">Private lessons Tuesday to Sunday by appointment. Closed Mondays.</p>
 <p class="note" id="localtime" hidden></p>
 <script src="/assets/localtime.js" defer></script>
@@ -135,7 +136,7 @@ def page(slug, title, desc, h1, lede, body, faqs=None, crumbs=True, extra_schema
 </main>
 <section class="close" aria-label="Book"><div class="in">
 <div><h2>{cta_h}</h2><p>{cta_p}</p></div>
-<a class="btn" href="sms:{tel}">Text to book</a>
+<a class="btn" href="{SITE['trial_url']}">Book the $20 trial</a>
 </div></section>
 <footer>
 <p><b>{SITE['name']}</b><br>{addr_line()}<br>Use the commercial door.</p>

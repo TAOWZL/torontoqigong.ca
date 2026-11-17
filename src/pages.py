@@ -11,7 +11,7 @@ INDEX_FAQ = [
  ("How much does it cost?", "A trial class is $20 plus HST. Ongoing students pay $150 plus HST per month."),
  ("What level is the class?", "Each class covers three to five movements, and the coaching is given to each person at their own level."),
  ("Is this qigong or neigong?", "Both words apply. We teach neigong, the internal side of practice, and we teach it through qigong forms."),
- ("How do I pay?", "E-transfer or in person at the school."),
+ ("How do I pay?", "By card online when you book, or by e-transfer or in person at the school."),
 ]
 
 INDEX_BODY = f"""
@@ -74,7 +74,7 @@ CLASS_BODY = """
 <p>If you are looking for a long flowing set done mainly as exercise, a tai chi class may suit you better. This class spends its time on what each movement does to your state.</p>
 
 <h2>Booking the trial</h2>
-<p>Text or call 416-595-5525 with your name and whether you will be in person or online. The trial is $20 plus HST, paid by e-transfer or in person.</p>
+<p><a href="https://buy.stripe.com/8x228qePkgwX3b0cWZ3Nm0E">Book the $20 trial online</a> (plus HST, paid by card). The confirmation page gives the address and the Zoom link. To pay by e-transfer or in person instead, text or call 416-595-5525.</p>
 """
 
 PRIVATE_FAQ = [
@@ -121,13 +121,13 @@ ONLINE_BODY = """
 <p>One-to-one lessons are also available online, Tuesday to Sunday by appointment. They use the same five-senses method as in person. <a href="/private-qigong-lessons.html">How private lessons work.</a></p>
 
 <h2>Booking</h2>
-<p>Text or call 416-595-5525 and say you are joining online. Payment is by e-transfer or in person.</p>
+<p><a href="https://buy.stripe.com/8x228qePkgwX3b0cWZ3Nm0E">Book the $20 trial online</a> by card from anywhere. The Zoom link is on the confirmation page. To stay on, <a href="https://buy.stripe.com/7sY7sK0YueoP9zo1eh3Nm0F">start the monthly subscription</a>.</p>
 """
 
 COST_FAQ = [
  ("Is HST included?", "No. All prices are plus HST."),
  ("Do unused sessions roll over?", "No. The Saturday classes and the included monthly session are for that month."),
- ("How do I pay?", "E-transfer or in person at 255 Broadview Ave."),
+ ("How do I pay?", "By card online, or by e-transfer or in person at 255 Broadview Ave."),
  ("What is divination coaching?", "A 30-minute one-to-one session using tarot or mahjong. Subscribers can choose it instead of the Reiki session each month."),
 ]
 
@@ -135,7 +135,7 @@ COST_BODY = """
 <p>Two prices cover the group program. Both are plus HST.</p>
 
 <div class="price"><h3>Trial class</h3><div class="amt">$20 <small>+ HST</small></div>
-<div><p>One Saturday neigong class, in person or online. The way to find out if the method suits you before committing to a month.</p></div></div>
+<div><p>One Saturday neigong class, in person or online. The way to find out if the method suits you before committing to a month.</p><p><a href="https://buy.stripe.com/8x228qePkgwX3b0cWZ3Nm0E">Book the trial</a></p></div></div>
 
 <div class="price"><h3>Monthly neigong subscription</h3><div class="amt">$150 <small>+ HST / mo</small></div>
 <div><ul>
@@ -143,14 +143,14 @@ COST_BODY = """
 <li>The other group classes on the school schedule</li>
 <li>One included session each month: a one-hour Reiki session or a 30-minute divination coaching session</li>
 </ul>
-<p>Unused classes and sessions do not roll over into the next month.</p></div></div>
+<p>Unused classes and sessions do not roll over into the next month.</p><p><a href="https://buy.stripe.com/7sY7sK0YueoP9zo1eh3Nm0F">Start the monthly subscription</a></p></div></div>
 
 
 <h2>Private lessons</h2>
 <p>One-to-one lessons are priced separately and paid at booking. Text or call 416-595-5525 for the current rate. <a href="/private-qigong-lessons.html">What a private lesson covers.</a></p>
 
 <h2>Paying</h2>
-<p>E-transfer or in person at the school.</p>
+<p>By card online through the booking links above, or by e-transfer or in person at the school.</p>
 """
 
 NEIGONG_FAQ = [
