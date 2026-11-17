@@ -14,7 +14,7 @@ SITE = {
     "postal": "",            # OPEN ITEM: paste postal code exactly as on the Google listing
     "phone": "416-595-5525", "phone_e164": "+14165955525",
     "email": "admin@wujixuan.org",  # OPEN ITEM: swap for an @torontoqigong.ca address if one is set up
-    "noindex": True,         # flip to False at launch
+    "noindex": False,         # flip to False at launch
     "sameAs": [],            # OPEN ITEM: Google listing URL, Instagram, Facebook, Eventbrite organiser page
 }
 
