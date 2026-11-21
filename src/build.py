@@ -16,7 +16,8 @@ SITE = {
     "email": "admin@wujixuan.org",
     "trial_url": "https://buy.stripe.com/8x228qePkgwX3b0cWZ3Nm0E", "monthly_url": "https://buy.stripe.com/7sY7sK0YueoP9zo1eh3Nm0F",  # OPEN ITEM: swap for an @torontoqigong.ca address if one is set up
     "noindex": False,         # flip to False at launch
-    "sameAs": [],            # OPEN ITEM: Google listing URL, Instagram, Facebook, Eventbrite organiser page
+    "sameAs": ["https://maps.google.com/?cid=4381801020569972829"],  # Google listing. OPEN ITEM: Instagram, Facebook, Eventbrite organiser page
+    "geo": (43.6629192, -79.351416),  # Google listing pin, 255 Broadview Ave
 }
 
 NAV = [("neigong-class.html","Saturday class"),("private-qigong-lessons.html","Private lessons"),("online-qigong-class.html","Online"),
@@ -42,6 +43,9 @@ def business_schema():
             "priceSpecification":{"@type":"UnitPriceSpecification","price":"150.00","priceCurrency":"CAD","unitText":"MONTH"},
             "description":"Saturday class every week, the other group classes on the schedule, plus one 1-hour Reiki session or one 30-minute divination coaching session each month. Plus HST."}]}
     if SITE["sameAs"]: s["sameAs"] = SITE["sameAs"]
+    if SITE.get("geo"):
+        s["geo"] = {"@type":"GeoCoordinates","latitude":SITE["geo"][0],"longitude":SITE["geo"][1]}
+        s["hasMap"] = SITE["sameAs"][0] if SITE["sameAs"] else None
     return s
 
 
